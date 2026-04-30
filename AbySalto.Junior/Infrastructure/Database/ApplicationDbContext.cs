@@ -1,9 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AbySalto.Junior.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace AbySalto.Junior.Infrastructure.Database
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
+        public DbSet<Order> Orders => Set<Order>();
+        public DbSet<OrderItem> OrderItems => Set<OrderItem>();
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
