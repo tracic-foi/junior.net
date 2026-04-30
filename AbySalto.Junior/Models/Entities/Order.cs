@@ -6,7 +6,7 @@ public class Order {
     public OrderStatus Status { get; set; }
     public required string CustomerName { get; set; }
     public DateTime OrderTime { get; set; } = DateTime.UtcNow;
-    public required string PaymentType { get; set; }
+    public required PaymentType PaymentType { get; set; }
     public required string CustomerAddress { get; set; }
     public required string CustomerNumber { get; set; }
     public string? Note { get; set; }
