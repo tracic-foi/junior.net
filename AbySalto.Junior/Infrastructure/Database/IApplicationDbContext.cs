@@ -1,6 +1,12 @@
-﻿namespace AbySalto.Junior.Infrastructure.Database
+﻿using AbySalto.Junior.Models.Entities;
+using Microsoft.EntityFrameworkCore;
+
+namespace AbySalto.Junior.Infrastructure.Database
 {
     public interface IApplicationDbContext
     {
+        DbSet<Order> Orders { get; }
+        DbSet<OrderItem> OrderItems { get; }
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }
