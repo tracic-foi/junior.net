@@ -3,10 +3,10 @@
 namespace AbySalto.Junior.Models.Entities; 
 public class Order {
     public int Id { get; set; }
-    public OrderStatus Status { get; set; }
+    public OrderStatus Status { get; set; } = OrderStatus.Waiting;
     public required string CustomerName { get; set; }
     public DateTime OrderTime { get; set; } = DateTime.UtcNow;
-    public required PaymentType PaymentType { get; set; }
+    public PaymentType PaymentType { get; set; }
     public required string CustomerAddress { get; set; }
     public required string CustomerNumber { get; set; }
     public string? Note { get; set; }
