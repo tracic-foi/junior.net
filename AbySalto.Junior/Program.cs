@@ -3,6 +3,7 @@ using AbySalto.Junior.Infrastructure.Database;
 using AbySalto.Junior.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using System.Text.Json.Serialization;
 
 namespace AbySalto.Junior
 {
@@ -12,7 +13,10 @@ namespace AbySalto.Junior
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            });
             builder.Services.AddOpenApi();
             builder.Services.AddScoped<IOrderService, OrderService>();
             builder.Services.AddEndpointsApiExplorer();
