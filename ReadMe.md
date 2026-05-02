@@ -29,7 +29,7 @@ docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123!" -p 1433:1433 -
 Connection string se nalazi u `appsettings.Development.json`. Ako koristiš drugu lozinku ili instancu baze, prilagodi:
 
 ```json
-"DefaultConnection": "Server=localhost;Database=AbySalto;User Id=sa;Password=   Password123!;TrustServerCertificate=True;"
+"DefaultConnection": "Server=localhost;Database=AbySalto;User Id=sa;Password=Password123!;TrustServerCertificate=True;"
 ```
 
 > Za produkcijsko okruženje preporuča se korištenje [User Secrets](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets) ili environment varijabli umjesto čuvanja lozinke u `appsettings.json`.
