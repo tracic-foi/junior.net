@@ -1,5 +1,6 @@
 
 using AbySalto.Junior.Infrastructure.Database;
+using AbySalto.Junior.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -13,7 +14,7 @@ namespace AbySalto.Junior
 
             builder.Services.AddControllers();
             builder.Services.AddOpenApi();
-
+            builder.Services.AddScoped<IOrderService, OrderService>();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
